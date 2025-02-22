@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Diabetes Prediction</title>
+    <style>
+        body {
+            background-image: url("frontpageee.jpg");
+            background-color: rgb(76, 222, 86); /* Greenish background */
+            background-size: cover;
+            background-repeat: no-repeat;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden; /* Hide horizontal scrollbar */
+        }
+
+        h1 {
+            color: #964b00; /* Yellow text */
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            text-align: center;
+            margin-top: 50px; /* Add some space at the top */
+        }
+
+        form {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 25px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            margin: 100px 20px 20px; /* 100px from top, 20px from right, and 20px from bottom */
+            float: left; /* Move the form to the left */
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"] {
+            width: calc(100% - 10px); /* Adjusted width to accommodate borders */
+            padding: 5px;
+            margin-bottom: 10px;
+            border-radius: 20px;
+            border: 3px solid #080808;
+        }
+
+        input[type="submit"] {
+            background-color: #009688; /* Green submit button */
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #00796b; /* Darker green on hover */
+        }
+
+        .note {
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    
+    <form action="/predict" method="post">
+        <label for="Pregnancies"><b>Pregnancies:</b></label>
+        <input type="text" name="Pregnancies"><br><br>
+        <label for="Glucose"><b>Glucose:</b></label>
+        <input type="text" name="Glucose"><br><br>
+        <label for="BloodPressure"><b>Blood Pressure:</b></label>
+        <input type="text" name="BloodPressure"><br><br>
+        <label for="SkinThickness"><b>Skin Thickness:</b></label>
+        <input type="text" name="SkinThickness"><br><br>
+        <label for="Insulin"><b>Insulin:</b></label>
+        <input type="text" name="Insulin"><br><br>
+        <label for="BMI"><b>BMI:</b></label>
+        <input type="text" name="BMI"><br><br>
+        <label for="DiabetesPedigreeFunction"><b>Diabetes Pedigree Function:</b></label>
+        <input type="text" name="DiabetesPedigreeFunction"><br><br>
+        <label for="Age"><b>Age:</b></label>
+        <input type="text" name="Age"><br><br>
+        <input type="submit" value="Predict">
+    </form>
+
+</body>
+</html>

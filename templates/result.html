@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Diabetes Prediction Result</title>
+    <style>
+        /* Style for the tablet-shaped button */
+        .tablet-button {
+            background-color: #073a35;
+            color: #ffffff;
+            border-style: groove;
+            border-color: #073a35; /* Match border color with background for the tablet shape */
+            padding: 10px 20px;
+            border-radius: 20px; /* Increase border-radius for a more rounded shape */
+            cursor: pointer;
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .tablet-button:hover {
+            background-color: #00796b;
+            transition-duration: 0.3s;
+        }
+
+        /* Hide the tablets list initially */
+        #tablets {
+            text-align: left;
+            display: none;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f5f5f5;
+            border-radius: 5px;
+        }
+
+        body.diabetic {
+            background-color: #f8d7da; /* Light red background for sad emotion */
+            color: #721c24; /* Dark red text color for sad emotion */
+        }
+
+        body.not-diabetic {
+            background-color: #d4edda; /* Light green background for happy emotion */
+            color: #155724; /* Dark green text color for happy emotion */
+        }
+
+        h1, h2 {
+            text-align: center;
+        }
+        img {
+            border-radius: 10px; /* Add curves to the image edges */
+        }
+
+    </style>
+</head>
+<body class="{% if result == 'The person is diabetic.' %}diabetic{% else %}not-diabetic{% endif %}">
+    <h1><u><b>Diabetes Prediction Result</b></u></h1>
+    {% if result == 'The person is diabetic.' %}
+    <h1>The person is diabetic 😞</h1>
+        <center><img src="{{ url_for('static', filename='image2.jpeg') }}" alt="Diabetic" width="650"></center>
+        <input type="submit" id="showTablets" class="tablet-button" value="Tablets for diabetes">
+        <div id="tablets">
+            <ul>
+                <li><h3>Metformin</h3></li>
+                <li><h3>Glibenclamide</h3></li>
+                <li><h3>Glimepiride</h3></li>
+                <li><h3>Insulin</h3></li>
+            </ul>
+        </div>
+    {% else %}
+    <h2>The person is not diabetic 🎉</h2>
+        <center><img src="{{ url_for('static', filename='image1.jpeg') }}" alt="Not Diabetic" width="900"></center>
+    {% endif %}
+
+    <script>
+        var tablets = document.getElementById('tablets');
+        var showTablets = document.getElementById('showTablets');
+        showTablets.addEventListener('click', function() {
+            if (tablets.style.display === 'none' || tablets.style.display === '') {
+                tablets.style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>
