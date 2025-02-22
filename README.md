@@ -1,6 +1,6 @@
 # Diabetes Prediction using SVM & AdaBoost
 
-![Diabetes Image](frontpage.jpg)
+![Diabetes Image](templates/frontpage.jpg)
 
 Welcome to the **Diabetes Prediction** project! This project utilizes **Support Vector Machine (SVM)** and **AdaBoost** classifiers to predict diabetes based on various health indicators. The goal is to achieve accurate predictions using **Python**, essential machine learning libraries, and a **Flask**-based interactive web application.
 
